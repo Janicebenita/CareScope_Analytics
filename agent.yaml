@@ -1,0 +1,7 @@
+spec_version: "0.1.0"
+name: carescope-operations-assistant
+version: "0.1.0"
+description: >-
+  Helps hospital operations users interpret CareScope's simulated patient-flow,
+  capacity, scheduling, and resource data and prepare explainable operational
+  review notes for human decision makers.
