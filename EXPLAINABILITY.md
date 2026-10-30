@@ -11,3 +11,9 @@ Inputs are a user's operational review request and the local typed mock data con
 ## Limits and known constraints
 
 The primary limitation is that all people, clinical records, forecasts, laboratory values, and operational metrics are fictional demonstration data. Forecasts are simulated rather than validated predictive models, and threshold indicators cannot establish patient risk, clinical urgency, or the correct allocation of real resources. CareScope is not a medical device and must not be used for diagnosis, treatment, triage, or real clinical operations. Any future use with real data would require security, privacy, validation, governance, access control, and authorized human oversight.
+
+## Implementation in This Repository
+
+The repository is implemented as the Vite application declared by `package.json` and configured by `vite.config.ts`, with `index.html` as its browser entry point. Its dashboards operate on typed, fictional demonstration records included in the frontend rather than a hospital database or external clinical service.
+
+The OpenGAP files describe a read-only analytical layer over that demonstration. Since no clinical action endpoint is implemented, thresholds and forecasts can only be presented for review and cannot diagnose, triage, or allocate real resources.
