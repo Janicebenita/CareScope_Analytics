@@ -14,6 +14,6 @@ The primary limitation is that all people, clinical records, forecasts, laborato
 
 ## Implementation in This Repository
 
-The repository is implemented as the Vite application declared by `package.json` and configured by `vite.config.ts`, with `index.html` as its browser entry point. Its dashboards operate on typed, fictional demonstration records included in the frontend rather than a hospital database or external clinical service.
+`agent.py` implements the deterministic `review_capacity(snapshot)` worker. It computes occupancy only when capacity is available, applies declared thresholds to fictional occupancy and wait-time values, flags unfilled simulated shifts, retains the four supplied values as evidence, labels the data as fictional, prohibits clinical use, and requires human review. `test_agent.py` verifies the high-occupancy demonstration flag.
 
-The OpenGAP files describe a read-only analytical layer over that demonstration. Since no clinical action endpoint is implemented, thresholds and forecasts can only be presented for review and cannot diagnose, triage, or allocate real resources.
+The Vite frontend is declared by `package.json`, configured by `vite.config.ts`, and entered through `index.html`. No clinical data or action endpoint is implemented, so the worker cannot diagnose, triage, or allocate real resources.
